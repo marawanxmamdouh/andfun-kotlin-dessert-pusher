@@ -81,7 +81,8 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
         }
 
         // Setup dessertTimer, passing in the lifecycle
-        dessertTimer = DessertTimer(this.lifecycle)
+        dessertTimer = DessertTimer()
+        lifecycle.addObserver(dessertTimer)
 
         // If there is a savedInstanceState bundle, then you're "restarting" the activity
         // If there isn't a bundle, then it's a "fresh" start
